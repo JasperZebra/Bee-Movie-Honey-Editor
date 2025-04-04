@@ -2,7 +2,8 @@
 A Python-based Honey editor for the Bee Movie Game for the Xbox 360, featuring a graphical user interface for modifying game saves.
 
 # Screenshots:
-![Screenshot 2025-04-03 200252](https://github.com/user-attachments/assets/a55d0f6b-8828-4fde-866e-f74a36cc7d38)
+![Screenshot 2025-04-03 224438](https://github.com/user-attachments/assets/64047624-f9ec-46d3-babc-6b0170c1559e)
+
 
 # Example:
 | Before | After |
@@ -12,7 +13,7 @@ A Python-based Honey editor for the Bee Movie Game for the Xbox 360, featuring a
 # Instruction:
 Step 1.) Load the `.BMGSave` into the editor
 
-Step 2.) Edit the `New Honey Value:` box with any value you want or select one of the presets.
+Step 2.) Edit the `New Honey Value:` box with any value you want or select one of the presets. **(Not recommended to add more than 9,999,999 honey, add too much the honey it will visually glitch out)**
 
 Step 3.) After changes have been made, click the `Save` button, then you'll also have to rehash and resign with [Horizon](https://www.wemod.com/horizon).
 

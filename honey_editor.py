@@ -246,7 +246,7 @@ class HoneyEditor:
         
         # Version label with larger font
         version_font = ('Arial', 16, 'bold')
-        version_label = ttk.Label(title_frame, text="v1.0", foreground=self.colors['highlight'], font=version_font)
+        version_label = ttk.Label(title_frame, text="v1.1", foreground=self.colors['highlight'], font=version_font)
         version_label.pack(side=tk.RIGHT, padx=5, pady=5)
         
         # File section with adjusted padding
@@ -305,7 +305,7 @@ class HoneyEditor:
         preset_label = ttk.Label(presets_frame, text="Quick Presets:")
         preset_label.pack(side=tk.LEFT, padx=(10, 15))
         
-        presets = [1000, 10000, 50000, 999999]
+        presets = [10000, 100000, 100000, 1000000, 9999999]
         for preset in presets:
             formatted_value = format(preset, ",")
             btn = ttk.Button(presets_frame, text=formatted_value, 
@@ -330,12 +330,19 @@ class HoneyEditor:
         # Bind Enter key to save changes
         self.root.bind('<Return>', lambda e: self.save_changes())
 
+    def show_welcome_message(self, filename, honey_value):
+        """Show welcome message when a save file is loaded"""
+        messagebox.showinfo(
+            "Save File Loaded", 
+            f"Successfully loaded save file:\n{filename}\n\nCurrent honey: {honey_value:,}"
+        )
+
     def load_save(self):
         file_path = filedialog.askopenfilename(
             title="Select Bee Movie Save File",
             filetypes=[
                 ("Bee Movie Save", "*.BMGSave"),
-                ("All Save Files", "*.sav *.dat *.BMGSave"),
+                ("All Save Files", "*.BMGSave"),
                 ("All Files", "*.*")
             ]
         )
@@ -363,6 +370,9 @@ class HoneyEditor:
             self.save_button.config(state="normal")
             
             self.status_label.config(text="Save file loaded successfully")
+            
+            # Show welcome message popup
+            self.show_welcome_message(self.file_path.name, self.honey_value)
             
         except Exception as e:
             messagebox.showerror("Error", f"Failed to load save file: {str(e)}")
@@ -418,7 +428,12 @@ class HoneyEditor:
             
             self.status_label.config(text="Save file updated successfully", foreground=self.colors['success'])
             
-            messagebox.showinfo("Success", f"Honey value updated to {new_honey:,} successfully!")
+            # Show success message popup
+            messagebox.showinfo(
+                "Save Successful", 
+                f"Honey has been updated!\n\nPrevious value: {self.honey_value:,}\nNew value: {new_honey:,}\n\nA backup of your original save file was created."
+            )
+            
             logger.info(f"Updated honey value to {new_honey}")
             
         except Exception as e:

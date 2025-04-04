@@ -29,3 +29,5 @@ For issues and support, please create a GitHub issue with:
 - Honey Editor version.
 - Error message/logs.
 - Steps to reproduce the problem.
+
+# Thank you for using the Bee Movie Honey Editor! Made with 🍯 by Jasper_Zebra

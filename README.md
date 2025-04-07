@@ -1,5 +1,7 @@
 # Bee Movie Honey Editor
 A Python-based Honey editor for the Bee Movie Game for the Xbox 360, featuring a graphical user interface for modifying game saves.
+---
+![honey_editor](https://github.com/user-attachments/assets/d93fd91a-0455-4339-8836-588879dea69f)
 
 # Screenshots:
 ![Screenshot 2025-04-03 224438](https://github.com/user-attachments/assets/64047624-f9ec-46d3-babc-6b0170c1559e)

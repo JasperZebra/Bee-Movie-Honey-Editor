@@ -246,7 +246,7 @@ class HoneyEditor:
         
         # Version label with larger font
         version_font = ('Arial', 16, 'bold')
-        version_label = ttk.Label(title_frame, text="v1.1", foreground=self.colors['highlight'], font=version_font)
+        version_label = ttk.Label(title_frame, text="v1.2", foreground=self.colors['highlight'], font=version_font)
         version_label.pack(side=tk.RIGHT, padx=5, pady=5)
         
         # File section with adjusted padding
@@ -305,7 +305,7 @@ class HoneyEditor:
         preset_label = ttk.Label(presets_frame, text="Quick Presets:")
         preset_label.pack(side=tk.LEFT, padx=(10, 15))
         
-        presets = [10000, 100000, 100000, 1000000, 9999999]
+        presets = [10000, 50000, 100000, 999999, 9999999]
         for preset in presets:
             formatted_value = format(preset, ",")
             btn = ttk.Button(presets_frame, text=formatted_value, 
